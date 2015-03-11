@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,67 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RDK-A2-gk6">
+                                <rect key="frame" x="0.0" y="44" width="606" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="44" width="600" height="756"/>
+                                </variation>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MS5-UG-qjG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="YQw-rm-bmf"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RDK-A2-gk6" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="5oi-2u-Ijr">
+                                <variation key="widthClass=compact" constant="12"/>
+                            </constraint>
+                            <constraint firstItem="RDK-A2-gk6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="KPb-SG-WNG"/>
+                            <constraint firstItem="MS5-UG-qjG" firstAttribute="trailing" secondItem="RDK-A2-gk6" secondAttribute="trailing" id="Qgl-51-Qhp"/>
+                            <constraint firstItem="MS5-UG-qjG" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Vy3-Oj-t8s">
+                                <variation key="widthClass=compact" constant="6"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="MS5-UG-qjG" secondAttribute="trailing" id="cfv-c3-RiX"/>
+                            <constraint firstItem="MS5-UG-qjG" firstAttribute="leading" secondItem="RDK-A2-gk6" secondAttribute="leading" id="qMW-Oc-6eu"/>
+                            <constraint firstItem="RDK-A2-gk6" firstAttribute="top" secondItem="MS5-UG-qjG" secondAttribute="bottom" id="ti7-Ec-8FF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qgl-51-Qhp"/>
+                                <exclude reference="Vy3-Oj-t8s"/>
+                                <exclude reference="cfv-c3-RiX"/>
+                                <exclude reference="qMW-Oc-6eu"/>
+                                <exclude reference="5oi-2u-Ijr"/>
+                                <exclude reference="KPb-SG-WNG"/>
+                                <exclude reference="ti7-Ec-8FF"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Qgl-51-Qhp"/>
+                                <include reference="Vy3-Oj-t8s"/>
+                                <include reference="cfv-c3-RiX"/>
+                                <include reference="qMW-Oc-6eu"/>
+                                <include reference="5oi-2u-Ijr"/>
+                                <include reference="KPb-SG-WNG"/>
+                                <include reference="ti7-Ec-8FF"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="navBar" destination="MS5-UG-qjG" id="wG2-d2-0fB"/>
+                        <outlet property="navItem" destination="YQw-rm-bmf" id="N5n-xp-3Ml"/>
+                        <outlet property="tableView" destination="RDK-A2-gk6" id="KaS-KW-RxZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="192" y="343"/>
         </scene>
     </scenes>
 </document>
